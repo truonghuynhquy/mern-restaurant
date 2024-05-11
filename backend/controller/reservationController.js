@@ -23,7 +23,6 @@ const send_reservation = async (req, res, next) => {
         });
     } catch (error) {
         // Handle Mongoose Validation errors
-        console.log(error.name);
         if (error.name === "ValidationError") {
             const validationError = Object.values(error.errors).map(
                 (err) => err.message
